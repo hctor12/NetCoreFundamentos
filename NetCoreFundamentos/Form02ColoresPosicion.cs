@@ -22,6 +22,18 @@ namespace NetCoreFundamentos
 
         private void btnCambiarFondo_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(this.txtRojo.Text) || string.IsNullOrEmpty(this.txtVerde.Text) || string.IsNullOrEmpty(this.txtAzul.Text))
+            {
+                MessageBox.Show("Debe ingresar un valor en los tres colores");
+                return;
+            }
+            if (int.Parse(this.txtRojo.Text) < 0 || int.Parse(this.txtRojo.Text) > 255 ||
+                int.Parse(this.txtVerde.Text) < 0 || int.Parse(this.txtVerde.Text) > 255 ||
+                int.Parse(this.txtAzul.Text) < 0 || int.Parse(this.txtAzul.Text) > 255)
+            {
+                MessageBox.Show("Los valores de los colores deben estar entre 0 y 255");
+                return;
+            }
             this.BackColor = Color.FromArgb(int.Parse(this.txtRojo.Text), int.Parse(this.txtVerde.Text), int.Parse(this.txtAzul.Text));
         }
     }
