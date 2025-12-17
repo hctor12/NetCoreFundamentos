@@ -53,5 +53,49 @@
                 this.lstTienda.Items.RemoveAt(index);
             }
         }
+
+        private void btnSubir_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lstAlmacen.SelectedIndex;
+            if (selectedIndex > 0)
+            {
+                object item = lstAlmacen.Items[selectedIndex];
+                this.lstAlmacen.Items.RemoveAt(selectedIndex);
+                this.lstAlmacen.Items.Insert(selectedIndex - 1, item);
+            }
+
+        }
+
+        private void lstAlmacen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = lstAlmacen.SelectedIndex;
+            if (selectedIndex > 0)
+            {
+                this.btnSubir.Enabled = true;
+            }
+            else
+            {
+                this.btnSubir.Enabled = false;
+            }
+            if (selectedIndex == (this.lstAlmacen.Items.Count - 1))
+            {
+                this.btnBajar.Enabled = false;
+            }
+            else
+            {
+                this.btnBajar.Enabled = true;
+            }
+        }
+
+        private void btnBajar_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lstAlmacen.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                object item = lstAlmacen.Items[selectedIndex];
+                this.lstAlmacen.Items.RemoveAt(selectedIndex);
+                this.lstAlmacen.Items.Insert(selectedIndex + 1, item);
+            }
+        }
     }
 }

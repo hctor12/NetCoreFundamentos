@@ -96,6 +96,7 @@
             lstAlmacen.Name = "lstAlmacen";
             lstAlmacen.Size = new Size(120, 154);
             lstAlmacen.TabIndex = 5;
+            lstAlmacen.SelectedIndexChanged += lstAlmacen_SelectedIndexChanged;
             // 
             // btnNuevo
             // 
@@ -161,6 +162,7 @@
             btnSubir.TabIndex = 11;
             btnSubir.Text = "Subir";
             btnSubir.UseVisualStyleBackColor = true;
+            btnSubir.Click += btnSubir_Click;
             // 
             // btnBajar
             // 
@@ -171,6 +173,7 @@
             btnBajar.TabIndex = 12;
             btnBajar.Text = "Bajar";
             btnBajar.UseVisualStyleBackColor = true;
+            btnBajar.Click += btnBajar_Click;
             // 
             // Form14TiendaProductos
             // 
