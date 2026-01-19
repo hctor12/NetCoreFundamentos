@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="NetCoreFundamentos/NetCoreFundamentos.csproj" />
+  <Project Path="ProyectoClases/ProyectoClases.csproj" Id="42ea42d5-8db3-49e6-9ffe-65bf39b8d66b" />
 </Solution>
